@@ -1,0 +1,110 @@
+@import 'default';
+@import 'fonts';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+::-webkit-scrollbar {
+    width: .5vw;
+    height: .7vw;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+.dafitiStructure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    // background-color: white;
+    text-wrap: pretty;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+    
+    p, label, li, label {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        @media (max-width: 1050px) {
+            
+        }
+        @media (max-width: 768px) {
+            
+        }
+        @media (max-width: 500px) {
+            
+        }
+    }
+
+    a {
+        p {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+    }
+
+    i {
+        font-style: italic;
+        b {
+            font-weight: bold;
+        }
+    }
+
+    .contentReturn {
+        position: relative;
+        .flexRight {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: sticky;
+            top: 55vh;
+            z-index: 2;
+            pointer-events: none;
+            
+            .btnReturn {
+                pointer-events: initial;
+                position: relative;
+                border: none;
+                margin-right: 1vw;
+                width: 3.2vw;
+                background-color: transparent;
+                cursor: pointer;
+                transition-duration: .3s;
+                @media (max-width: 768px) {
+                    width: 11vw;
+                    margin-right: 1.5vw;
+                }
+                &:hover {
+                    transform: scale(1.1);
+                }
+    
+                img {
+                    display: block;
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, .8);
+                    border-radius: 100%;
+                    backdrop-filter: blur(2px);
+                }
+            }
+        }
+    }
+}
+
