@@ -1,20 +1,12 @@
-img {
-    // opacity: .1;
-    // position: absolute;
-    width: 100%;
-}
-
-body {
-    background-color: black;
-}
-
 .section-title {
+    margin-top: 2rem;
     h2 {
-        color: #ffffff;
+        color: #000000;
         text-align: center;
         font-weight: 600;
         text-transform: uppercase;
         font-size: 2rem;
+        line-height: 1;
         i {
             font-weight: 300;
         }
@@ -24,7 +16,6 @@ body {
 .newCluster {
     width: 100%;
     height: 11.6vw;
-    // background-color: #0003;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +34,7 @@ body {
             flex-wrap: no-wrap;
             overflow-x: scroll;
             justify-content: flex-start;
-            gap: 5vw;
+            gap: 8vw;
             padding: 0 5%;
         }
 
@@ -67,7 +58,6 @@ body {
                 width: 100%;
                 height: 100%;
                 position: relative;
-                // background-image: linear-gradient(to bottom right, #00E9FF 10%, #00FFDC 90%);
                 background-image: linear-gradient(#00E9FF, #00FFDC);
                 border-radius: 30vw;
                 display: flex;
@@ -80,28 +70,32 @@ body {
                     content: "";
                     width: 103%;
                     height: 110%;
-                    filter: blur(.3vw);
                     position: absolute;
                     z-index: -1;
-                    opacity: 1;
                     border-radius: 30vw;
-                    // background-image: linear-gradient(to bottom right, #00E9FF, #00FFDC);
                     background-image: linear-gradient(#00E9FF, #00FFDC);
-                    animation: gradient 1s linear infinite;
+                    animation: gradient 1s linear infinite alternate;
                     @media (max-width: 768px) {
-                        width: 104%;
+                        width: 105%;
                         height: 112%;
+                        animation: gradientMobile 1s linear infinite alternate;
+                    }
+
+                    @keyframes gradientMobile {
+                        0% {
+                            filter: blur(.4vw);
+                        }
+                        100% {
+                            filter: blur(2vw);
+                        }
                     }
 
                     @keyframes gradient {
                         0% {
                             filter: blur(.4vw);
                         }
-                        50% {
-                            filter: blur(.7vw);
-                        }
                         100% {
-                            filter: blur(.4vw);
+                            filter: blur(.7vw);
                         }
                     }
                 }
@@ -118,6 +112,10 @@ body {
                 position: absolute;
                 z-index: 1;
                 background-color: #000000;
+                @media (max-width: 768px) {
+                    width: calc(100% - 2vw);
+                    height: calc(100% - 2vw);
+                }
 
                 p {
                     font-family: "Poppins", sans-serif;
@@ -133,6 +131,7 @@ body {
                     }
 
                     b {
+                        font-weight: 700;
                         font-size: 6vw;
                         @media (max-width: 768px) {
                             font-size: 14vw;
